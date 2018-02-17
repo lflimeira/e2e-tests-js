@@ -1,0 +1,26 @@
+{
+  "name": "e2e-tests-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lflimeira/e2e-tests-js.git"
+  },
+  "keywords": [
+    "e2e",
+    "tests",
+    "acceptance",
+    "JavaScript",
+    "JS"
+  ],
+  "author": "Luiz Felipe de Oliva Limeira (lflimeira)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lflimeira/e2e-tests-js/issues"
+  },
+  "homepage": "https://github.com/lflimeira/e2e-tests-js#readme"
+}
