@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
   },
   "repository": {
     "type": "git",
@@ -22,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/lflimeira/e2e-tests-js/issues"
   },
-  "homepage": "https://github.com/lflimeira/e2e-tests-js#readme"
+  "homepage": "https://github.com/lflimeira/e2e-tests-js#readme",
+  "devDependencies": {
+    "cypress": "^2.0.1"
+  }
 }
