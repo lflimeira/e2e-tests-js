@@ -1,1 +1,5 @@
-{}
+{
+  "baseUrl": "http://local.magento/",
+  "videoRecording": false,
+  "screenshotOnHeadlessFailure": false
+}

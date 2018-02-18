@@ -1,0 +1,26 @@
+version: '2.1'
+services:
+  magento:
+    image: pagarme/magento2 
+    ports:
+      - "80:80"
+    depends_on:
+      db:
+        condition: service_healthy
+    env_file:
+      - .env
+    volumes:
+      - .:/var/www/html/app/modules
+  
+  db:
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      interval: 1s
+      retries: 20
+    image: mysql:5.6.23
+    volumes:
+      - db-data:/var/lib/mysql/data
+    env_file:
+      - .env
+volumes:
+  db-data:

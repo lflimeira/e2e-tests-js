@@ -1,22 +1,25 @@
-describe('My First Test', () => {
-  it('Visit the kitchen sink', () => {
-    cy.visit('https://example.cypress.io')
+describe('Login into the administrative area.', () => {
+  it('Visit Magento\'s admin', () => {
+    cy.visit('/admin')
+    cy.wait(5000) 
+  })
 
-    cy.contains('type').click()
+  it('Informs the username and password', () => {
+    cy.get('#username')
+      .type('admin')
+    
+    cy.get('#login')
+      .type('magentorocks1')
+
+    cy.get('input[name="form_key"]')
+      .should('have.value')
   })
   
-  it('Find and click in an element', () => {
-    cy.contains('type').click()
+  it('Find and click in the button', () => {
+    cy.contains('Sign in').click()
   })
-  
-  it('Make an assertion', () => {
-    cy.url()
-      .should('include', '/commands/actions')
-  })
-  
-  it('Gets, types and asserts', () => {
-    cy.get('.action-email')
-      .type('fake@email.com')
-      .should('have.value', 'fake@email.com')
-  })
+
+  it('Successfully access the admin area',() => {
+    cy.contains('Dashboard')
+  })  
 })
