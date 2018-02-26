@@ -2,10 +2,11 @@
   "name": "e2e-tests-js",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
   "scripts": {
     "cypress:open": "cypress open",
-    "cypress:run": "cypress run"
+    "cypress:run": "cypress run",
+    "start": "node ./bin/www",
+    "start:dev": "./node_modules/.bin/nodemon start"
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,16 @@
   },
   "homepage": "https://github.com/lflimeira/e2e-tests-js#readme",
   "devDependencies": {
-    "cypress": "^2.0.1"
+    "cypress": "^2.0.3",
+    "nodemon": "^1.15.1"
+  },
+  "dependencies": {
+    "body-parser": "~1.18.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "express": "^4.15.5",
+    "jade": "~1.11.0",
+    "morgan": "~1.9.0",
+    "serve-favicon": "~2.4.5"
   }
 }
