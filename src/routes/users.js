@@ -1,15 +1,23 @@
-var express = require('express');
-var router = express.Router();
-var path    = require("path");
+const express = require('express')
+const router = express.Router()
+const path    = require("path")
+const userValidation = require("../middlewares/users-validation")
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.sendFile(path.join(__dirname + '/../../public/login.html'));
+const publicPath = __dirname + '/../../public/'
+
+/* GET users' login form. */
+router.post('/', userValidation.addUser, function(req, res, next) {
+    res.status(200).send({ msg: "User registered =)" })
 });
 
-/* GET users listing. */
+/* GET users' login form. */
+router.get('/login', function(req, res, next) {
+  res.sendFile(path.join(`${publicPath}login.html`))
+});
+
+/* GET users' sign up. */
 router.get('/new', function(req, res, next) {
-  res.sendFile(path.join(__dirname + '/../../public/add_user.html'));
+  res.sendFile(path.join(`${publicPath}add_user.html`))
 });
 
-module.exports = router;
+module.exports = router
