@@ -1,1 +1,4 @@
-{}
+{
+  "screenshotOnHeadlessFailure": false,
+  "videoRecording": false 
+}
