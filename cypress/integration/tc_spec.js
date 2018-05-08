@@ -1,6 +1,6 @@
-describe('Training Center - Site', function () {
-  describe('Title', function () {
-    it('should assert that title is correct', function () {
+describe('Training Center - Site', () => {
+  describe('Title', () => {
+    it('should assert that title is correct', () => {
       cy.visit('https://trainingcenter.io/')
 
       cy.get('.main-content__title')
@@ -8,12 +8,12 @@ describe('Training Center - Site', function () {
     })
   })
 
-  describe('Participe', function () {
-    it('should assert that the item Participe exist on menu', function () {
+  describe('Participe', () => {
+    it('should assert that the item Participe exist on menu', () => {
       cy.contains('Participe').click()
     })
     
-    it('should ensure that the Participe item has slack and github link', function () {
+    it('should ensure that the Participe item has slack and github link', () => {
       cy.url().should('include', '#come')
 
       cy.get('.come__title')
@@ -26,12 +26,12 @@ describe('Training Center - Site', function () {
     })
   })
 
-  describe('Projetos', function () {
-    it('should assert that the item Projetos exist on menu', function () {
+  describe('Projetos', () => {
+    it('should assert that the item Projetos exist on menu', () => {
       cy.contains('Projetos').click()
     })
     
-    it('should ensure that the Projetos item has all projects', function () {
+    it('should ensure that the Projetos item has all projects', () => {
       cy.url().should('include', '#initiatives')
 
       cy.get('.initiatives__box__title')
@@ -47,14 +47,14 @@ describe('Training Center - Site', function () {
   })
 
   describe('Blog', () => {
-    it('should ensure that the Blog item is linked with the correctly url', function () {
+    it('should ensure that the Blog item is linked with the correctly url', () => {
       cy.get('.nav-menu__list > li:nth-child(4) > a')
         .should('have.attr', 'href').and('include', 'https://medium.com/trainingcenter')
     })
   })
 
   describe('Apoie', () => {
-    it('should ensure that the Apoie item is linked with the correctly url', function () {
+    it('should ensure that the Apoie item is linked with the correctly url', () => {
       cy.get('.nav-menu__list > li:nth-child(1) > a')
         .should('have.attr', 'href').and('include', 'https://apoia.se/training-center')
     })
